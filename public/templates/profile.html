@@ -131,27 +131,29 @@
                 </div>
               </div>
               <hr class="border-light m-0">
-
+<!--######################################-->
+<form action="{{ url_for('profile_page') }}" method="post">
               <div class="card-body">
                 <div class="form-group">
                   <label class="form-label">Username</label>
-                  <input type="text" class="form-control mb-3" value="nmaxwell">
+                  <input type="text" class="form-control mb-3" value="nmaxwell" name="username">
                 </div>
                 <div class="form-group">
                   <label class="form-label">Name</label>
-                  <input type="text" class="form-control mb-3" value="Nelle Maxwell">
+                  <input type="text" class="form-control mb-3" value="Nelle Maxwell" name="name">
                 </div>
                 <div class="form-group">
                   <label class="form-label">E-mail</label>
-                  <input type="text" class="form-control mb-3" value="nmaxwell@mail.com">
+                  <input type="text" class="form-control mb-3" value="nmaxwell@mail.com" name="email">
                   <div class="alert alert-warning mt-3">
                     Your email is not confirmed. Please check your inbox.<br>
                     <a href="javascript:void(0)">Resend confirmation</a>
                   </div>
                 </div>
+                
                 <div class="form-group">
                   <label class="form-label">Occupancy</label>
-                  <input type="text" class="form-control" value="Professor">
+                  <input type="text" class="form-control" name="occupancy" value="Professor">
                 </div>
               </div>
 
@@ -345,11 +347,14 @@
       </div>
     </div>
 
+
+  
     <div class="text-right mt-3 mb-3">
-      <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
+      <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;
       <button type="button" class="btn btn-default">Cancel</button>
     </div>
-
+<!--##################################################################-->
+  </form>
   </div>
   <!-- Account setting ends -->
 

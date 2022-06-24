@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
-from sympy import reduce_inequalities
 from firebase import *
+from forms import RegisterForm
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '563c631f1c3ef2fbb8600758'
 
 @app.route('/')
 @app.route('/home')
@@ -23,6 +25,11 @@ def gallery_page():
 @app.route('/notification')
 def notification_page():
     return render_template('notification.html')
+
+@app.route('/register')
+def register_page():
+    form = RegisterForm()
+    return render_template('register.html', form=form)
 
 @app.route('/profile', methods=['POST', 'GET'])
 def profile_page():

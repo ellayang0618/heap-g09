@@ -23,7 +23,7 @@ db = firebase.database()
 # 'name' : 'Kennedy Walsh',
 # 'email' : 'kennedywalsh@gmail.com',
 # 'occupancy' : 'Youtuber'}
-# db.child('users').child('kennedy123').set(data)
+# db.child('users').child('usertest1').set(data)
 
 #retrieve data
 missing = db.child('users').child('missing').get()

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
 from firebase import *
 from forms import RegisterForm
 
@@ -26,9 +26,24 @@ def gallery_page():
 def notification_page():
     return render_template('notification.html')
 
-@app.route('/register')
+@app.route('/register', methods=['POST', 'GET'])
 def register_page():
     form = RegisterForm()
+    if form.validate_on_submit():
+        print('//////////////////')
+        username = form.username.data
+        user_to_create = {
+            'username' : form.username.data,
+            'email' : form.email.data,
+            'password' : form.password1.data
+        }
+        print(f'data collected{form.username}')
+        db.child('users').child(username).set(user_to_create)
+        return redirect(url_for('home_page'))
+
+    if form.errors != {}:
+        for err_msg in form.errors.values():
+            print(f'There was was ettoe with creating a user:{err_msg}')
     return render_template('register.html', form=form)
 
 @app.route('/profile', methods=['POST', 'GET'])

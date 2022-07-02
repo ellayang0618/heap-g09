@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, get_flashed_messages
 from firebase import *
 from forms import RegisterForm
 
@@ -30,7 +30,7 @@ def notification_page():
 def register_page():
     form = RegisterForm()
     if form.validate_on_submit():
-        print('//////////////////')
+        print('-----------form validated------------')
         username = form.username.data
         user_to_create = {
             'username' : form.username.data,

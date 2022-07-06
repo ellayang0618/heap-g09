@@ -43,7 +43,7 @@ def register_page():
 
     if form.errors != {}:
         for err_msg in form.errors.values():
-            print(f'There was was ettoe with creating a user:{err_msg}')
+            flash(f'There was was error with creating a user:{err_msg}', category='danger')
     return render_template('register.html', form=form)
 
 @app.route('/profile', methods=['POST', 'GET'])

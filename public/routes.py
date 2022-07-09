@@ -14,6 +14,10 @@ def home_page():
 def aboutus_page():
     return render_template('aboutus.html')
 
+@app.route('/articles')
+def articles_page():
+    return render_template('articles.html')
+
 @app.route('/contact')
 def contact_page():
     return render_template('contact.html')

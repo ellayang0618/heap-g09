@@ -56,6 +56,7 @@ $(document).ready(function () {
 
       if (output !== "") {
         $("#newsResults").html(output);
+        
       }
 
     },

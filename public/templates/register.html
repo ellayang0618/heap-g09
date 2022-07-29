@@ -72,11 +72,7 @@
                 <span>Inbox</span>
                 <span class="badge">3</span>
             </a>
-            <div class=" d-none d-lg-flex">
-                <div id="my-signin2" data-onsuccess="onSuccess"></div>
-                <img src="#" referrerpolicy="no-referrer" id="profilePic" width="50" height="50" style="display:none">
-                <a href="profile.html" id="profile" class="nav-item nav-link" style="display:none">Profile</a>
-            </div>
+            <a href="{{ url_for('login_page') }}" class="nav-item nav-link">Login</a>
         </div>
         </div>
     </nav>
@@ -154,6 +150,12 @@
         {{form.password2(class="form-control", placeholder="Confirm Password")}}
 
         <br>
+
+        <div class="checkbox mb-3">
+            <h6>Already have an account?</h6>
+            <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+         </div>
+
         {{form.submit(class="btn btn-lg btn-block btn-primary")}}
     </form>
 </div>

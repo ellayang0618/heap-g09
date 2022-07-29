@@ -61,7 +61,7 @@
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav mx-auto p-4 p-lg-0">
         <a href="{{ url_for('home_page') }}" class="nav-item nav-link active">Home</a>
         <a href="{{ url_for('aboutus_page') }}" class="nav-item nav-link">About Us</a>
@@ -74,8 +74,12 @@
         <span>Inbox</span>
         <span class="badge">3</span>
       </a>
-      <a href="{{ url_for('login_page') }}" class="nav-item nav-link">Logout</a>
-    </div>
+      <div class=" d-none d-lg-flex">
+        <div id="my-signin2" data-onsuccess="onSuccess"></div>
+        <img src="#" referrerpolicy="no-referrer" id="profilePic" width="50" height="50" style="display:none">
+        <a href="profile.html" id="profile" class="nav-item nav-link" style="display:none">Profile</a>
+      </div>
+    </div> -->
     </div>
   </nav>
   <!-- Navbar End -->
@@ -83,17 +87,43 @@
   <!-- Page Header Start -->
   <div class="container-fluid page-header py-6 mb-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center pt-5 pb-3">
-      <h1 class="display-4 text-white animated slideInDown mb-3">Articles</h1>
+      <h1 class="display-4 text-white animated slideInDown mb-3"></h1>
     </div>
   </div>
   <!-- Page Header End -->
 
-  <!-- Account setting starts -->
-  {% block content %}
-  {% endblock %}
+  <!-- Login starts -->
+  <body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:black">
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 font-weight-normal">
+                <br><br>
+                Please Login
+            </h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="User Name") }}
+
+            {{ form.password.label() }}
+            {{ form.password(class="form-control", placeholder="Password") }}
+
+            <br>
+
+
+            <div class="checkbox mb-3">
+               <h6>Do not have an account?</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+</body>
 
   
-  <!-- Account setting ends -->
+  <!-- Login ends -->
 
 
   <!-- footer Start -->

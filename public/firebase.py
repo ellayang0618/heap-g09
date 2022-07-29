@@ -1,7 +1,5 @@
 import pyrebase 
 
-
-
 firebaseConfig = {
   'apiKey': "AIzaSyDNTIHNUjndUj_VKGq1lkrnZe8vJM7wayk",
   'authDomain': "heapg09.firebaseapp.com",
@@ -26,6 +24,9 @@ db = firebase.database()
 # db.child('users').child('usertest1').set(data)
 
 #retrieve data
-missing = db.child('users').child('missing').get()
-print(missing.val())
+# missing = db.child('users').child('missing').get()
+# print(missing.val())
+
+check_username = db.child('users').child('jason_51').get().val()['password']
+print(check_username)
 

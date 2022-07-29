@@ -61,12 +61,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav mx-auto p-4 p-lg-0">
-                <a href="home.html" class="nav-item nav-link active">Home</a>
-                <a href="aboutus.html" class="nav-item nav-link">About Us</a>
-                <a href="gallery.html" class="nav-item nav-link">Photo Gallery</a>
-                <a href="articles.html" class="nav-item nav-link">Articles</a>
-                <a href="forum.html" class="nav-item nav-link">Forum</a>
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                <a href="{{ url_for('home_page') }}" class="nav-item nav-link active">Home</a>
+                <a href="{{ url_for('aboutus_page') }}" class="nav-item nav-link">About Us</a>
+                <a href="{{ url_for('gallery_page') }}" class="nav-item nav-link">Photo of the Day</a>
+                <a href="{{ url_for('articles_page') }}" class="nav-item nav-link">Articles</a>
+                <a href="{{ url_for('forum_page') }}" class="nav-item nav-link">Forum</a>
+                <a href="{{ url_for('contact_page') }}" class="nav-item nav-link">Contact Us</a>
             </div>
             <a href="{{ url_for('notification_page') }}" class="notification">
                 <span>Inbox</span>

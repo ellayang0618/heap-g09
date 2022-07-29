@@ -22,6 +22,10 @@ def articles_page():
 def contact_page():
     return render_template('contact.html')
 
+@app.route('/forum')
+def forum_page():
+    return render_template('forum.html')
+
 @app.route('/gallery')
 def gallery_page():
     return render_template('gallery.html')

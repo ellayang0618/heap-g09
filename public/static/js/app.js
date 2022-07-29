@@ -1,7 +1,7 @@
 $(document).ready(function () {
   
 
-  let url = "https://newsapi.org/v2/top-headlines?q=space&apiKey=e1952da524ab4e6e9eeccd8bee08f3f3";
+  let url = "https://newsapi.org/v2/top-headlines?q=nasa&apiKey=e1952da524ab4e6e9eeccd8bee08f3f3";
 
   $.ajax({
     url: url,

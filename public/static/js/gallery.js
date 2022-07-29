@@ -23,7 +23,6 @@ function useApiData(data){
     if (data.media_type == 'image'){
         
         document.getElementById('source').innerHTML = `<img class="img-fluid" width="350" height="250" src="${data.url}" alt="">`;
-        document.getElementById('home_photo').innerHTML = `<img class="img-fluid" width="350" height="250" src="${data.url}" alt="">`;
     }else{
         document.getElementById('source').innerHTML = `<iframe width="500" height="350" src = "${data.url}"></iframe>`
     

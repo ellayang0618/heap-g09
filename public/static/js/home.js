@@ -22,7 +22,7 @@ function useApiData(data){
     
     }
     document.getElementById('home_photo').onclick=function (){
-        window.location.href = "http://localhost/heap-g09/public/templates/gallery.html";
+        window.location.href = "{{ url_for('gallery_page') }}";
     }
 
     

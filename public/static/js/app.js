@@ -18,7 +18,9 @@ $(document).ready(function () {
 
     success: function (newsdata) {
       let output = "";
+      let output2 = "";
       let count = 0;
+      let count2 = 0;
       let latestNews = newsdata.articles;
       for (var i in latestNews) {
         if(count == 0){
@@ -53,10 +55,16 @@ $(document).ready(function () {
           </div>`
           count = 0
         };
+
+        if( count2 < 2 ){
+          output2 = output
+          count2 += 1
+        }
       }
 
       if (output !== "") {
         $("#newsResults").html(output);
+        $("#newsResults2").html(output2);
         
       }
 
